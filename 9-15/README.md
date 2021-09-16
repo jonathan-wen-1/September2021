@@ -1,2 +1,2 @@
 # 9-15 Assignments
-folder with text file used also included
+Folder with text file used also included
