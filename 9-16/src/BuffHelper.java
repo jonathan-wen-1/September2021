@@ -16,10 +16,12 @@ public class BuffHelper {
 						wait();
 					}
 					 //to differentiate the items from eachother, should constantly increment
-					System.out.println("Added product- now have: " + numAdd);
+					System.out.println("Added product number: " + numAdd);
 					prodList.add(numAdd++);
+					System.out.println(prodList);
 //					numAdd+=1;
 					notify();
+					Thread.sleep(1000);
 				}
 			}
 		}catch(InterruptedException e) {
@@ -36,7 +38,9 @@ public class BuffHelper {
 					}
 					Integer consumeProd= prodList.removeFirst();
 					System.out.println("Consumed product: " + consumeProd);
+					System.out.println(prodList);
 					notify();
+					Thread.sleep(1000);
 				}
 			}
 		}catch(InterruptedException e) {
