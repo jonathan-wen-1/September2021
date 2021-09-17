@@ -46,9 +46,9 @@ public class Deadlock {
 		
 		new Thread(run1).start();
 		new Thread(deadlockRun).start();
-		//Deadlock happens because of Thread.sleep, which ensures that the running threads swap and both first layer 
-		//synchronized blocks will be called, thus s
-		//
+		//Deadlock happens because of Thread.sleep, which will help allow deadlockRun start and lock on lock2
+		//while run1 is still locked on lock1, so when they go into their second synchronized blocks they want the other
+		//run's resources while still locked on the one the other one wants thus creating deadlock
 		System.out.println("Even though this is printed, code may not terminate");
 	}
 }
